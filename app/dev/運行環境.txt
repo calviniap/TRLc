@@ -1,0 +1,6 @@
+Python 3.5
+Flask
+peewee
+pymysql
+flask-script
+flask-bootstrap

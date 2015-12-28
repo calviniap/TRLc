@@ -1,0 +1,13 @@
+﻿{% extends "bootstrap/base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"  href="{{url_for('static', filename='style/index.css')}}">
+{% endblock %}
+{% block scripts %}
+<script src="{{url_for('static', filename='script/script.js')}}"></script>
+{{super()}}
+{% endblock %}
+{% block content %}
+歡迎使用!
+{% endblock %}

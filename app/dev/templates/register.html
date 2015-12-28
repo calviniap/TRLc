@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+<link href="{{registercss}}" rel="stylesheet">
+{% endblock %}
+{% block scripts %}
+<script src="{{url_for('static', filename='script/jquery.validate.min.js')}}"></script>
+<script src="{{url_for('static', filename='script/script.js')}}"></script>
+<script src="{{url_for('static', filename='script/layer/layer.js')}}"></script>
+{{super()}}
+{% endblock %}
+{% block content %}
+<div class="box">
+    <div id="tip" class="tip"></div>
+    <br>
+      <form id="registerform" name="registerform" class="form-horizontal" method ="post">
+      <div class="col-xs-3" id="col-xs-3">
+          <div class="form-group">
+              <table border="0" width="500px">
+                  <tr><td><span class="fui-user"></span></td><td><input type="text" value="" placeholder="賬戶 abcABC" class="form-control" autofocus="autofocus" id="username" name="username" minlength="2"
+data-msg-minlength="至少输入2个字符" maxlength="9"></td></tr>
+                  <tr><td><span class="fui-eye"></span></td><td><input type="password" value="" placeholder="密碼6~8位數 a~zA~Z0~9" class="form-control"  id="userpass" name="userpass" minlength="6"
+data-msg-minlength="至少输入6个字符" maxlength="9"></td></tr>
+                  <tr><td><span class="fui-eye"></span></td><td><input type="password" value="" placeholder="密碼6~8位數 a~zA~Z0~9" class="form-control"  id="userpass2" name="userpass2" minlength="6"
+data-msg-minlength="至少输入6个字符" maxlength="9" required equalTo="#userpass "></td></tr>
+                  <tr><td><span class="fui-chat"></span></td><td><input type="text" value="" placeholder="QQ 5~13位數字" class="form-control"  id="qq" name="qq" minlength="5"
+data-msg-minlength="至少输入5位數" maxlength="11"></td></tr>
+                  <tr><td><span class="fui-mail"></span></td><td><input type="text" value="" placeholder="汝亓個性簽名" class="form-control"  id="signature" name="signature"></td></tr>
+                 <tr><td></td><td><input class="btn btn-block btn-lg btn-primary" type="submit" value="注 冊"><a href="/" class="btn btn-block btn-lg btn-primary">登 錄</a></td></tr>
+              </table>
+          </div>
+      </div>
+  </form>
+    </div>
+
+{% endblock %}
+
+
+

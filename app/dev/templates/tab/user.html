@@ -1,0 +1,39 @@
+{% block content %}
+<table border="1" width=100% class="divtdcolor">
+    <tr><th class="divtdcolor" width="200px"><center>用戶</th>
+        <th class="divtdcolor" width="50px"><center>ID</th>
+            <th class="divtdcolor" width="100px"><center>QQ</th>
+                <th class="divtdcolor" width="100px"><center>簽名</th>
+                    <th class="divtdcolor" width="30px"><center>等級</th>
+                        <th class="divtdcolor" width="30px"><center>封禁</th>
+                            <th class="divtdcolor" width="200px"><center>方幣</th>
+                                <th class="divtdcolor"><center>執行</th>
+                                </tr>
+    {% for data in datas %}
+    <form id=userf name=userf method="post">
+    <tr>
+        <Td class="divtdcolor" width="10px"><center><a href=# title="{{data.signature}}">{{data.NAME}}</a></Td>
+        <Td class="divtdcolor"><center>{{data.ID}}</Td>
+        <Td class="divtdcolor"><center><input class="centerinput" type="text" id="QQ_{{data.ID}}" name="QQ_{{data.ID}}" value="{{data.QQ}}" onchange="save('QQ',{{data.ID}})" onclick="this.select();"></Td>
+        <Td class="divtdcolor"><center><input class="centerinput" type="text" id="signature_{{data.ID}}" name="signature_{{data.ID}}" value="{{data.signature}}" title="{{data.signature}}" onchange="save('signature',{{data.ID}})" onclick="this.select();"></Td>
+        <Td class="divtdcolor"><center>
+            <select id="level_{{data.ID}}" name="level_{{data.ID}}" class="centerinput" onchange="save('selectlevel',{{data.ID}})">
+                <option value="1" {{data.selectlevel1}}>1</option>
+                <option value="2" {{data.selectlevel2}}>2</option>
+                <option value="3" {{data.selectlevel3}}>3</option>
+            </select>
+        </Td>
+        <Td class="divtdcolor"><center>
+            <select id="ban_{{data.ID}}" name="ban_{{data.ID}}" class="centerinput" onchange="save('selectban',{{data.ID}})">
+                <option value="0" {{data.selectban0}}>否</option>
+                <option value="1" {{data.selectban1}}>是</option>
+            </select>
+        </Td>
+        <Td class="divtdcolor"><center><input size=10 class="rightinput" type="text" id="COIN_{{data.ID}}" name="COIN_{{data.ID}}" value="{{data.COIN}}" onchange="save('COIN',{{data.ID}})" onclick="this.select();"><input type="button" value='+5' onclick="COIN_{{data.ID}}.value=parseInt(COIN_{{data.ID}}.value)+5;save('COIN',{{data.ID}});"><input type="button" value='+10' onclick="COIN_{{data.ID}}.value=parseInt(COIN_{{data.ID}}.value)+10;save('COIN',{{data.ID}});"></Td>
+        <Td class="divtdcolor"><center><a href="#" onclick="user_del({{data.ID}})">刪除之亓用戶</a><input size=2 id="id_{{data.ID}}" name="id_{{data.ID}}" type="hidden" value="{{data.ID}}"></Td>
+    </tr>
+
+</form>
+    {% endfor %}
+</table>
+{% endblock %}

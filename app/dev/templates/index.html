@@ -1,0 +1,60 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}{{title}}-{{session.get('me')}}{% endblock %}
+{% block styles %}
+{{super()}}
+<LINK href="{{url_for('static',filename='checkbox/styles.css')}}" type=text/css rel=stylesheet>
+<LINK href="{{url_for('static',filename='checkbox/inserthtml.com.radios.css')}}" type=text/css rel=stylesheet>
+<LINK href="{{url_for('static',filename='checkbox/default.css')}}" type=text/css rel=stylesheet>
+<LINK href="{{url_for('static',filename='style/menu.css')}}" type=text/css rel=stylesheet>
+<LINK href="{{url_for('static',filename='style/index.css')}}" type=text/css rel=stylesheet>
+<LINK href="{{url_for('static',filename='style/style.css')}}" type=text/css rel=stylesheet>
+{% endblock %}
+{% block scripts %}
+<script src="{{url_for('static',filename='script/layer/layer.js')}}"></script>
+<script src="{{url_for('static',filename='checkbox/modernizr.js')}}"></script>
+<script src="{{url_for('static',filename='script/script.js')}}"></script>
+{{super()}}
+{% endblock %}
+{% block content %}
+<div class="bigbox">
+    <div class="row">
+            <div class="col-xs-3">
+              <h3 class="demo-panel-title">&nbsp;<font color="#fff"><b>{{title}}</b></font></h3>
+              <div class="btn-group">
+                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button">指令<span class="caret"></span></button>
+                <ul role="menu" class="dropdown-menu">
+                  <li><a id="server_m" class="btn">服務器信息</a></li>
+                  <li><a id="group_m" class="btn">組列表</a></li>
+                  <li><a id="player_m" class="btn">禁止玩家</a></li>
+                  <li><a id="item_m" class="btn">禁止物品</a></li>
+                  <li><a id="Projectile_m" class="btn">禁止彈藥</a></li>
+                  <li><a id="block_m" class="btn">禁止方塊</a></li>
+                  <li><a id="lindi_m" class="btn">玩家領地</a></li>
+                  <li><a id="howse_m" class="btn">玩家住宅</a></li>
+                  <li><a id="tpa_m" class="btn">跳躍點</a></li>
+                  <li><a id="wanjiaziliao_m" class="btn">玩家資料</a></li>
+                  <li><a id="user_m" class="btn">用戶管理</a></li>
+                  <li class="divider"></li>
+                  <li><a id="exit" class="btn" href="/out">{退出}</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            </div> <!-- /.col-xs-3 -->
+        </div>
+
+        <div id="main_box" class="main_box">
+        <div id="server" class="tab_0" name="服務器信息"></div>
+        <div id="group" class="tab" name="組列表"></div>
+        <div id="player" class="tab" name="禁止玩家"></div>
+        <div id="item" class="tab" name="禁止物品"></div>
+        <div id="Projectile" class="tab" name="禁止彈藥"></div>
+        <div id="block" class="tab" name="禁止方塊"></div>
+        <div id="lindi" class="tab" name="玩家領地"></div>
+        <div id="howse" class="tab" name="玩家住宅"></div>
+        <div id="tpa" class="tab" name="跳躍點"></div>
+        <div id="wanjiaziliao" class="tab" name="玩家資料"></div>
+        <div id="user" class="tab" name="用戶管理"></div>
+        </div>
+        <div id="logo" class="logo"><img src="{{url_for('static',filename='images/tr.jpg')}}"></div>
+        <div id="mybox" class="mybox">ID:{{session.get('id')}}&nbsp;|&nbsp;NAME:{{session.get('name')}}&nbsp;|&nbsp;QQ:{{session.get('QQ')}}&nbsp;|&nbsp;等級:{{session.get('level')}}&nbsp;|&nbsp;方幣:{{session.get('COIN')}}&nbsp;&nbsp;<br>簽名:<p>{{session.get('signature')}}</p></div>
+</div>
+{% endblock %}

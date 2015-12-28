@@ -1,0 +1,38 @@
+@charset "utf-8";
+body {
+	font-family: 'monacoregular';
+	font-size: 14px;
+	margin:0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+    overflow-x: hidden;
+}
+
+*{cursor: url(../item/arrow.cur) 8 8,default;}
+
+div {
+	font-size: 14px;
+      -moz-user-select:none;
+      -webkit-user-select:none;
+      user-select:none;
+}
+
+a:link {
+	color: orange;
+	text-decoration: none;
+    cursor: url(../item/arrow.cur) 8 8,default;
+}
+a:visited {
+	color: #fff;
+	text-decoration: none;
+    cursor: url(../item/arrow.cur) 8 8,default;
+}
+a:hover {
+	color: #fff;
+	text-decoration: none;
+    cursor: url(../item/arrow.cur) 8 8,default;
+}
+a:active {
+	color: #fff;
+	text-decoration: none;
+    cursor: url(../item/arrow.cur) 8 8,default;
+}

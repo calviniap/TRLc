@@ -1,0 +1,22 @@
+{% block content %}
+<p><h6>服務器信息</h6></p>
+<form name='servernameform'method="post">
+{% for data in datas %}
+<table border="0">
+    <tr><td>appname</td><td><input type="text" size="20" id="server_name" name="server_name" value="{{data.NAME}}" onchange="save('server_name')"></td></tr>
+    <tr><td>appurl</td><td><input type="text" size="20" id="server_url" name="server_url" value="{{data.URL}}" onchange="save('server_url')"></td></tr>
+</table>
+<div class="canregisterdiv">
+    <div class="holder" style="background: #538A9F;">
+        <div class="center" style="width:300px;">
+            <input type="checkbox" id="checkbox-2-1" name="canregister" value="1"  {{data.canregisterchecked}} onchange="save('canregister')"/><label for="checkbox-2-1" style="width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;允許注冊</label>
+        </div>
+    </div>
+</div>
+<table class="serveronlinetable">
+    <tr><td><font color="#fff" size=14px>服務器開關</font></td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td><input type="checkbox" id="checkbox-11-2" name="serveronline" value="1"  {{data.serveronlinechecked}} onchange="save('serveronline')"/><label for="checkbox-11-2" style="width:80px;height:33px;"></label></td></tr>
+</table>
+<div id="msg">msg</div>
+{% endfor %}
+</form>
+{% endblock %}

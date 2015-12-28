@@ -1,0 +1,14 @@
+body{
+  background:#399;
+}
+.box{
+position: absolute;
+float: left;
+top:200px;
+left:40%;
+width: 400px;
+height: 500px;
+}
+#col-xs-3{
+  width: 400px;
+}

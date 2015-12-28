@@ -1,0 +1,14 @@
+$.ajax({ 
+type: 'POST', 
+url: url, 
+data: JSON.stringify({a: [1,2], b: 3}), 
+contentType: 'application/json' 
+}) 
+
+
+在 flask 里用 request.json 可以直接拿到对应的 dict 对象： 
+
+request.json 就是 {'a': [1,2], 'b': 3} 了，request.json.get('a') 就是 [1,2]
+
+
+if($("[name=row_checkbox]").attr('checked')==true)

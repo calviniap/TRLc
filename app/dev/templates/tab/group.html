@@ -1,0 +1,23 @@
+﻿{% block content %}
+<table border="1px" class="divtdcolor">
+    <tr bgcolor="#477789"><th colspan=6 class="divtdcolor"><center>組列表</th></tr>
+    <tr bgcolor="#477789">
+        <th class="divtdcolor"><center>GroupName</th>
+            <th class="divtdcolor"><center>Parent</th>
+                <th class="divtdcolor"><center>Commands</th>
+                    <th class="divtdcolor"><center>ChatColor</th>
+                        <th class="divtdcolor"><center>Prefix</th>
+                            <th class="divtdcolor"><center>Suffix</th>
+                                </tr>
+    {% for data in datas %}
+    <tr>
+        <td class="divtdcolor"><input type="text" id="GroupName" name="GroupName" value="{{data.GroupName}}"></td>
+        <td class="divtdcolor"><input type="text" id="Parent" name="Parent" value="{{data.Parent}}"></td>
+        <td class="divtdcolor"><input type="text" size=64px id="Commands" name="Commands" value="{{data.Commands}}"></td>
+        <td class="divtdcolor"><input type="text" id="ChatColor" name="ChatColor" value="{{data.ChatColor}}"></td>
+        <td class="divtdcolor"><input type="text" id="Prefix" name="Prefix" value="{{data.Prefix}}"></td>
+        <td class="divtdcolor"><input type="text" id="Suffix" name="Suffix" value="{{data.Suffix}}"></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
