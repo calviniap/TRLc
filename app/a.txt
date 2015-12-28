@@ -8,5 +8,5 @@ import (
 
 func main() {
 	fmt.Println("Hello World! ")
-	time.Sleep(4)
+	time.Sleep(5)
 }
